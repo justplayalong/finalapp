@@ -1,0 +1,93 @@
+//Final App Description: Game app for children / toddlers to learn names and number of sides for shapes. Inspired by my 3 and 6 year old niece and nephew
+//Name:Alexis Cotti
+//Date:4/17/18
+#include <cstdlib> 
+#include <iostream> 
+#include<iomanip> 
+#include <string>
+  
+using namespace std; 
+//prototypes
+int triangle(int a);
+int square(int b);
+int rectangle(int c);
+
+
+void displaymenu(){ 
+cout<<"==================================================="<<"\n"; 
+cout<<"                         MENU                                  "<<"\n"; 
+cout<<"==================================================="<<"\n"; 
+cout<<"     1.Triangle"<<"\n"; 
+cout<<"     2.Square"<<"\n"; 
+cout<<"     3.Rectangle"<<"\n"; 
+} 
+
+int triangle(int a){ 
+    return(a); 
+} 
+  
+int square(int b){ 
+    return(b); 
+} 
+  
+int rectangle(int c){ 
+    return(c); 
+} 
+  
+void Answer(int choice, int a, int b, int c){
+int result;
+string reply;
+switch(choice){ 
+ case 1:result = triangle(a);break; 
+ case 2:result = square(b);break; 
+ case 3:result = rectangle(c);break;
+ default:result = 99999;
+}
+if (result = 1){
+  cout << "You chose the triangle! The triangle has 3 sides!" <<endl;
+} else if (result = 2){
+  cout << "You chose the square! The square has 4 sides!"<<endl;
+} else if (result = 3){
+  cout << "You chose the rectangle! The rectangle has 4 sides!"<<endl;
+}
+}
+
+   class sides {
+     public:
+     int sides;
+   };
+
+int main(int argc, char *argv[]) 
+{ 
+  //declaring shape sides
+  sides triangle;
+  sides square;
+  sides rectangle;
+  
+  //triangle specs
+  triangle.sides = 3;
+  //square specs
+  square.sides = 4;
+  //rectangle specs
+  rectangle.sides = 4;
+  
+ //show menu 
+displaymenu(); 
+int yourchoice; 
+int a; 
+int b; 
+int c;
+char confirm; 
+do 
+{ 
+cout<<"Choose your shape! A for Triangle, B for Square, or C for Rectangle."; 
+cin>>yourchoice; 
+//show answer
+Answer( yourchoice, a, b, c);
+cout<<"\nWould you like to choose another shape?"; 
+cin>>confirm;
+}while(confirm=='y'||confirm=='Y'); 
+  cin.get();
+   return 0; 
+   
+}
